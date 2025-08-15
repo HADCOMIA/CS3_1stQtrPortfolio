@@ -8,28 +8,45 @@
 
     <label>
         Enter your age:
-        <input type= "text" name="age"></input>
+        <input id="age"></input>
     </label>
     <br>
     <br>
     <label>
         Enter your life expectancy:
-        <input type= "text" name= "maxAge"></input>
+        <input id= "maxAge"></input>
     </label>
     <br>
     <br>
     <label>
-        Enter the number of ricecrackers could consume per day:
-        <input type= "text" name= "numperday"></input>
+        Enter the number of snacks per day:
+        <input id= "numperday"></input>
     </label>
-    <br>
     <br>
     <br>
 
     <label>
-        Result:
-        <br>
-        <input type= "button" value = "Accept input">
+        <p id="result"> Result : </p>
+        <button onclick= "getData()"> Accept Input</button> 
+        <script>
+            function getData()
+            {
+                let AGE = age.value;
+                let MAX = document.getElementById("maxAge").value;
+                let NUM = document.getElementById("numperday").value;
+
+                if (confirm('Did you enter the correct values for age: ' + AGE + ", life expectancy: " + MAX + ", snacks per day: " + NUM + ' ?'))
+                {
+                    total = (NUM*365) * (MAX - AGE)
+                    document.getElementById("result").innerHTML = "Result: You will need " + total + " rice crackers until the ripe old age of " + MAX + ".";
+                }
+                else
+                {
+                    alert("Run code again");
+                }
+            }
+
+        </script>
     </label>
 
 </body>
