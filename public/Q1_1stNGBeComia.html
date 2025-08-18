@@ -1,3 +1,56 @@
+<head>
+    <title>Feed Me My Snacks!!</title>
+</head>
+
+<body>
+    <h1>SnackCounter3000</h1>
+    <h3>Please enter the required information</h3>
+
+    <label>
+        Enter your age:
+        <input id="age"></input>
+    </label>
+    <br>
+    <br>
+    <label>
+        Enter your life expectancy:
+        <input id= "maxAge"></input>
+    </label>
+    <br>
+    <br>
+    <label>
+        Enter the number of snacks per day:
+        <input id= "numperday"></input>
+    </label>
+    <br>
+    <br>
+
+    <label>
+        <p id="result"> Result : </p>
+        <button onclick= "getData()"> Accept Input</button> 
+        <script>
+            function getData()
+            {
+                let AGE = age.value;
+                let MAX = document.getElementById("maxAge").value;
+                let NUM = document.getElementById("numperday").value;
+
+                if (confirm('Did you enter the correct values for age: ' + AGE + ", life expectancy: " + MAX + ", snacks per day: " + NUM + ' ?'))
+                {
+                    total = (NUM*365) * (MAX - AGE)
+                    document.getElementById("result").innerHTML = " <b>Result: You will need " + total + " rice crackers until the ripe old age of " + MAX + ". </b>";
+                }
+                else
+                {
+                    alert("Run code again");
+                }
+            }
+
+        </script>
+    </label>
+
+</body>
+
 <script src="script.js">
   
 </script>
