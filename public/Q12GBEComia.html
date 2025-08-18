@@ -1,0 +1,52 @@
+<head>
+    <title>Weirdly Specific Calculator</title>
+</head>
+
+<body>
+    <h2>Q1 2nd Graded Exercise submitted by Hiraya Comia of 9Beryllium</h2>
+
+    <label>
+        Enter the meal price:
+        <input id="mp"></input>
+    </label>
+    <br>
+    <br>
+    <label>
+        Enter the tipping amount:
+        <input id= "tip"></input>
+    </label>
+    <br>
+    <br>
+    <label>
+        Enter the service charge:
+        <input id= "sc"></input>
+    </label>
+    <br>
+    <br>
+
+    <label>
+        <p id="result"> Result : </p>
+        <button onclick= "getData()"> Accept Input</button> 
+        <script>
+            function getData()
+            {
+                
+                let MP = document.getElementById("mp").value;
+                let TIP = document.getElementById("tip").value;
+                let SC = document.getElementById("sc").value;
+                
+                if (confirm('Did you enter the correct values for meal price: ' + MP + ", tip: " + TIP + ", service charge: " + SC + ' ?'))
+                {
+                    total = (MP + TIP) + (SC/100  * MP)
+                    document.getElementById("result").innerHTML = "Total Meal: " + total + ".";
+                }
+                 else
+                {
+                    alert("Run code again");
+                }
+            }
+
+        </script>
+    </label>
+
+</body>
