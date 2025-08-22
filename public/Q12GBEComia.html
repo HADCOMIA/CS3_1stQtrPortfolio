@@ -37,7 +37,7 @@
                 
                 if (confirm('Did you enter the correct values for meal price: ' + MP + ", tip: " + TIP + ", service charge: " + SC + ' ?'))
                 {
-                    total = (MP + TIP) + (SC/100  * MP)
+                    total = (Number(MP) + Number(TIP)) + (Number(SC)/100  * Number(MP))
                     document.getElementById("result").innerHTML = "Total Meal: " + total + ".";
                 }
                  else
